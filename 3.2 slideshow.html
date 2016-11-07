@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Pret-Style </title>
+<style type="text/css">
+html{
+	background-image:cover;
+	background-image: url(logo.tif);
+}
+header{
+	margin-top: 5%;
+}
+#title{
+	width: 50%;
+	margin-left: 10%;
+	position:absolute;
+	font-size: 18pt;
+	border-radius: 25px;
+	padding: 20px; 
+    height: 70px;
+	background-color:transparent;
+	background: cover;
+	font-family: Times;
+	box-shadow: -12px 0px 40px 2px
+
+}
+ #loc{
+ 	font-family: Times;
+ 	font-size: 40pt;
+ 	color: #4B0082;
+ }
+ #places{
+ 	display: inline-flex;
+ 	
+ }
+ img{
+ 	width: 500px; 
+ 	height: 450px;
+ 	border: solid 2pt;
+ 	border-color: black;
+ }
+ a{
+	background-color: #F0FFF0;
+	border:solid;
+	border: 1;
+	border-color: black;
+ }
+</style>
+</head>
+<header>
+<div id="title">  Top Ten Must Sees for 2017: <br>
+Places to Visit...<br>
+by Patrice Prosper
+</div>
+</header>
+<body>
+<center>
+
+<div class="places"> <div id=loc> Barcelona </div> <img src="bar.jpg"></div>
+<div class="places"> <div id=loc> Copenhagen </div><img src="cop.jpg"></div>
+<div class="places"> <div id=loc> Helsinki </div><img src="Hel.jpg"></div>
+<div class="places"> <div id=loc> Prague </div><img src="pra.jpg"></div>
+<div class="places"> <div id=loc> Venice </div><img src="ven.jpg"></div>
+
+<a type="back-button" onclick="add(-1)">&#10094;</a>
+<a type="forward-button" onclick="add(+1)">&#10095;</a>
+</center>
+<script>
+var list = 1;
+roll(list);
+
+function add(n) {
+	roll(list += n);
+	}
+function roll(n){
+	var i;
+	var x =document.getElementsByClassName("places");
+	if(n > x.length) {list= 1}
+	if(n < 1) {list = x.length}
+
+	//if (n<1) {fashlist =x.length}//
+	for (i =0; i < x.length; i++)
+		{x[i].style.display="none";}
+		{x[list-1].style.display="block";}
+	}
+</script>
+</body>
+</html>
